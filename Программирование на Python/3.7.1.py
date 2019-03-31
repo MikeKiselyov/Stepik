@@ -18,26 +18,40 @@
 
 games = int(input())
 
-count_zenit = 0
-wins_zenit = 0
-count_spartak = 0
-wins_spartak = 0
-count_cska = 0
-wins_cska = 0
+
+def best_function(command_name):
+    count_games = 0
+    count_wins = 0
+    count_draw = 0
+    count_lose = 0
+    all_points = 0
+    for i in range(games):
+        if (a == command_name):
+            count_games += 1
+            if (b > d):
+                count_wins += 1
+                all_points += 3
+            elif (b == d):
+                count_draw += 1
+                all_points += 1
+            else:
+                count_lose += 1
+        elif (c == command_name):
+            count_games += 1
+            if (b < d):
+                count_wins += 1
+                all_points += 3
+            elif (b == d):
+                count_draw += 1
+                all_points += 1
+            else:
+                count_lose += 1
+    return print(
+        command_name + " " + str(count_games) + " " + str(count_wins) + " " + str(count_draw) + " " + str(all_points))
+
 
 for i in range(games):
     a, b, c, d = (x for x in input().split(';'))
-    if (a == 'Зенит' or c == 'Зенит'):
-        count_zenit += 1
-        if (b > d):
-            wins_zenit +=1
-        else:
-            
-    if (a == 'Спартак' or c == 'Спартак'):
-        count_spartak += 1
-    if (a == 'ЦСКА' or c == 'ЦСКА'):
-        count_cska += 1
-
-print('Зенит :' + str(count_zenit))
-print('Спартак :' + str(count_spartak))
-print('ЦСКА :' + str(count_cska))
+best_function('Зенит')
+best_function('Спартак')
+best_function('ЦСКА')
